@@ -25,34 +25,11 @@
     <div class="ui fluid raise card chatbox">
       <div class="content">
         <div class="ui  feed">
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <em>Elliot Fu</em>: test message
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <em>Stevie Feliciano</em>: test message
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <em>Helen Troy</em>: test message
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <em>Christian Rocha</em>: test message
-              </div>
-            </div>
-          </div>
+          <% if @mesages %>
+            <%= render @messages %>
+          <% else %>
+            <h5>there is no messages yet....</h5>
+          <% end %>
         </div>
       </div>
       <div class="extra content">
