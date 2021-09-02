@@ -18,4 +18,17 @@
 //= require_tree .
 $(document).on('turbolinks:load', function(){
   $('.ui.dropdown').dropdown();
+  setTimeout(function(){
+    $('.message').fadeOut();
+  }, 2000);
+  // $('.message .close')
+  //   .on('click', function() {
+  //     $(this)
+  //       .closest('.message')
+  //       .transition('fade')
+  //     ;
+  //   })
+  // ;
+
+
 });
