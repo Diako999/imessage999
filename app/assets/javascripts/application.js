@@ -16,19 +16,37 @@
 //= require turbolinks
 //= require semantic-ui
 //= require_tree .
+
+
+function scrollBottom(){
+  if($('#messages').length > 0){
+    $('#messages').scrollTop($('#messages')[0].scrollHeight);
+  }
+}
+
+function message_submit(){
+  $('#message_body').on('keydown', function(e){
+    if(e.keyCode == 13){
+      $('button').click();
+      e.target.value = "";
+    }
+  });
+}
+
 $(document).on('turbolinks:load', function(){
   $('.ui.dropdown').dropdown();
   setTimeout(function(){
     $('.message').fadeOut();
   }, 2000);
-  // $('.message .close')
-  //   .on('click', function() {
-  //     $(this)
-  //       .closest('.message')
-  //       .transition('fade')
-  //     ;
-  //   })
-  // ;
-
+  $('.message .close')
+    .on('click', function() {
+      $(this)
+        .closest('.message')
+        .transition('fade')
+      ;
+    })
+  ;
+  message_submit();
+  scrollBottom();
 
 });
