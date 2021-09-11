@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['DATABASE_URL'] %>
+  redis = Redis.new (
+    :host => 'ec2-52-45-238-24.compute-1.amazonaws.com',
+    :port => 5432,
+    :password => '48972108eec4fe78ccb84eda9af08e294e267f6b89d66d4579891c397402176a')
