@@ -1,0 +1,21 @@
+<% @online_users.each do |user| %>
+    <div class="ui grid">
+      <div class="four wide column">
+          <h5 style= "color:#fff;"><%= user.username %></h5>
+      </div>
+      <div class="four wide column"></div>
+      <div class="four wide column"></div>
+      <div class="four wide column" id="friend_request_button">
+        <% if @requested_users.empty? %>
+            <%= link_to ('<i class="small orange plus  icon"></i>').html_safe, friend_request_index_path(sender_id: current_user.id, reciever_id: user.id), method: :post %>
+        <% else %>
+              <% if @user_list.include? user.id %>
+                  <i class="small orange clock  icon"></i>
+              <% else %>
+                  <%= link_to ('<i class="small orange plus  icon"></i>').html_safe, friend_request_index_path(sender_id: current_user.id, reciever_id: user.id), method: :post %>
+              <% end %>
+        <% end %>
+      </div>
+    </div>
+
+<% end %>

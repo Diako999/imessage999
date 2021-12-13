@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'message', to: 'messages#create'
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
-
+  get 'online_users', to: 'users#online_users'
+  resources :friend_request, only: [:create, :destroy]
   mount ActionCable.server, at: '/cable'
 end

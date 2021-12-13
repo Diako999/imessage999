@@ -7,16 +7,25 @@
   <div class="four wide column">
     <div class="ui fluid raise card chatbox">
       <div class="content">
-        <div class="ui inverted vertical menu">
-          <a class="active item">
-            Home
+        <div class="ui inverted vertical menu" style = "width: 100%;">
+          <a class="active item online_users_header">
+              <h4>Online Users</h4>
           </a>
+          <div class="content">
+            <div id="active_users" style = "margin-left:25px; padding-bottom:5px;">
+              
+            </div>
+          </div>
           <a class="item">
-            Messages
+            <h4>Friends</h4>
           </a>
-          <a class="item">
-            Friends
-          </a>
+          <div class="content">
+            <div class="ui list" style = "margin-left:25px; padding-bottom:5px;">
+              <div class="item">Apples</div>
+              <div class="item">Pears</div>
+              <div class="item">Oranges</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -38,6 +47,7 @@
             <div class="ui fluid icon input">
               <%= f.text_field :body %>
               <%= f.button '<i class="bordered inverted orange send icon"></i>'.html_safe %>
+              <%= link_to ('<i class="sync small alternate orange icon" id= "online_users"></i>').html_safe, online_users_path() , remote: true %>
             </div>
           </div>
         <% end %>

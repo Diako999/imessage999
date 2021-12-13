@@ -17,6 +17,14 @@
 //= require semantic-ui
 //= require_tree .
 
+$(document).on('turbolinks:load', function(){
+  $('#online_users').click();
+
+  setInterval(function(){
+    $('#online_users').click();
+  }, 10000);
+});
+
 
 function scrollBottom(){
   if($('#messages').length > 0){
